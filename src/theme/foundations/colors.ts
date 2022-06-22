@@ -3,6 +3,13 @@ export default {
   secondary: '#FF2E71',
   black: '#313131',
   white: '#FFFFFF',
+  greenYellow: '#ABFF3A',
+  heliotrope: '#C64EFF',
+  manatee: '#9B94B1',
+  lightPaleLilac: {
+    100: '#CFD6E5',
+  },
+  nickel: '#6C7078',
 
   paleWhite: {
     300: '#838BB3',
@@ -12,13 +19,31 @@ export default {
     300: '#9BA2C0',
   },
 
+  primaryAlpha: {
+    50: 'rgba(32, 254, 180, 0.15)',
+  },
+
+  secondaryAlpha: {
+    50: 'rgba(255, 46, 113, 0.15)',
+  },
+  yellowOrange: {
+    300: '#FFBC3A',
+  },
+
+  blueAlpha: {
+    50: 'rgba(14, 13, 39, 0.5)',
+  },
+
   whiteAlpha: {
     50: 'rgba(255, 255, 255, 0.04)',
     100: 'rgba(255, 255, 255, 0.06)',
     200: 'rgba(255, 255, 255, 0.08)',
+    250: 'rgba(255, 255, 255, 0.1)',
     300: 'rgba(255, 255, 255, 0.16)',
+    350: 'rgba(255, 255, 255, 0.2)',
     400: 'rgba(255, 255, 255, 0.24)',
     500: 'rgba(255, 255, 255, 0.36)',
+    550: 'rgba(255, 255, 255, 0.4)',
     600: 'rgba(255, 255, 255, 0.48)',
     700: 'rgba(255, 255, 255, 0.64)',
     800: 'rgba(255, 255, 255, 0.80)',
@@ -29,9 +54,12 @@ export default {
     100: 'rgba(0, 0, 0, 0.06)',
     200: 'rgba(0, 0, 0, 0.08)',
     300: 'rgba(0, 0, 0, 0.16)',
+    350: 'rgba(0, 0, 0, 0.2)',
     400: 'rgba(0, 0, 0, 0.24)',
+    450: 'rgba(0, 0, 0, 0.3)',
     500: 'rgba(0, 0, 0, 0.36)',
     600: 'rgba(0, 0, 0, 0.48)',
+    650: 'rgba(0, 0, 0, 0.6)',
     700: 'rgba(0, 0, 0, 0.64)',
     800: 'rgba(0, 0, 0, 0.80)',
     900: 'rgba(0, 0, 0, 0.92)',
@@ -250,5 +278,21 @@ export default {
 
   light: {
     50: '#58667e',
+  },
+
+  arsenic: {
+    700: '#41414B',
+  },
+
+  columbiaBlue: {
+    100: '#CFD6E5',
+  },
+
+  greenYellowAlpha: {
+    300: 'rgba(171, 255, 58, 0.15)',
+  },
+
+  heliotropeAlpha: {
+    300: 'rgba(198, 78, 255, 0.15)',
   },
 };

@@ -7,7 +7,7 @@ const Tabs: ComponentStyleConfig = {
     },
   },
   variants: {
-    line: {
+    primary: {
       tablist: {
         position: 'relative',
         border: 'none',
@@ -15,11 +15,11 @@ const Tabs: ComponentStyleConfig = {
         '&::after': {
           content: '""',
           position: 'absolute',
-          bottom: '-2px',
+          bottom: '0',
 
           width: '100%',
           height: '1px',
-          background: 'whiteAlpha.300',
+          background: 'whiteAlpha.250',
         },
       },
       tab: {
@@ -40,6 +40,45 @@ const Tabs: ComponentStyleConfig = {
             width: '100%',
             height: '3px',
             background: 'primary',
+            zIndex: 1,
+          },
+        },
+      },
+    },
+
+    secondary: {
+      tablist: {
+        position: 'relative',
+        border: 'none',
+
+        '&::after': {
+          content: '""',
+          position: 'absolute',
+          bottom: '0',
+
+          width: '100%',
+          height: '1px',
+          background: 'whiteAlpha.250',
+        },
+      },
+      tab: {
+        position: 'relative',
+        border: 'none',
+        color: 'gray.300',
+
+        _selected: {
+          color: 'secondary',
+          fontWeight: 'medium',
+
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            bottom: '0',
+
+            borderRadius: '3px 3px 0 0',
+            width: '100%',
+            height: '3px',
+            background: 'secondary',
             zIndex: 1,
           },
         },

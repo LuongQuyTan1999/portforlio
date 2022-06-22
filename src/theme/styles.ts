@@ -3,6 +3,21 @@ import { GlobalStyleProps, mode } from '@chakra-ui/theme-tools';
 const styles = {
   global: {
     'html, body': {},
+
+    '&::-webkit-scrollbar': {
+      width: '6px',
+      height: '6px',
+    },
+
+    '&::-webkit-scrollbar-thumb': {
+      borderRadius: '4px',
+    },
+
+    '.scroll': {
+      '&::-webkit-scrollbar-thumb': {
+        backgroundColor: 'nickel',
+      },
+    },
   },
   colors: {
     gray: {

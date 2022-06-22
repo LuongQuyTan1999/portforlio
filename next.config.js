@@ -1,7 +1,14 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
 
-module.exports = {
-  reactStrictMode: true,
+const { i18n } = require('./next-i18next.config');
+
+const nextConfig = {
+  /**
+   * @type {import('next').NextConfig}
+   */
+  reactStrictMode: false,
+  i18n,
+  extends: ['plugin:@next/next/recommended'],
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
@@ -27,3 +34,5 @@ module.exports = {
     return config;
   },
 };
+
+module.exports = nextConfig;

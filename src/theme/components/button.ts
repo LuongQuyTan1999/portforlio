@@ -1,41 +1,42 @@
 import type { ComponentStyleConfig } from '@chakra-ui/theme';
 
 import { hexToRgba } from '@/utils/color';
+import colors from '@/theme/foundations/colors';
 
 const Button: ComponentStyleConfig = {
   baseStyle: {
-    fontWeight: 'semibold',
-    fontSize: 'lg',
-
-    bg: 'primary',
-    background: 'primary',
-    color: 'blackColor',
-
-    w: '100%',
     minW: '100px',
     maxW: '360px',
-    h: '50px',
-    height: '50px',
     borderRadius: '3xl',
-    padding: '0 30px',
-
-    _hover: {
-      filter: 'brightness(0.8)',
-      bg: 'primary',
-      background: 'primary',
-      color: 'black',
-    },
-
-    _active: {
-      filter: 'brightness(0.9)',
-      bg: 'primary',
-      background: 'primary',
-      color: 'black',
-    },
   },
-
   variants: {
-    primary: {},
+    noStyle: {
+      padding: '0',
+      height: 'auto',
+    },
+    primary: {
+      fontWeight: 'semibold',
+      fontSize: 'lg',
+      padding: '0 30px',
+
+      bg: 'primary',
+      background: 'primary',
+      color: 'blackColor',
+
+      _hover: {
+        filter: 'brightness(0.8)',
+        bg: 'primary',
+        background: 'primary',
+        color: 'black',
+      },
+
+      _active: {
+        filter: 'brightness(0.9)',
+        bg: 'primary',
+        background: 'primary',
+        color: 'black',
+      },
+    },
 
     'outline-primary': {
       bg: 'transparent',
@@ -47,14 +48,14 @@ const Button: ComponentStyleConfig = {
       _hover: {
         filter: 'brightness(0.95)',
         bg: 'primary',
-        background: hexToRgba('primary', 0.1),
+        background: hexToRgba(colors.primary, 0.1),
         color: 'primary',
       },
 
       _active: {
         filter: 'brightness(0.95)',
         bg: 'primary',
-        background: hexToRgba('primary', 0.3),
+        background: hexToRgba(colors.primary, 0.3),
         color: 'primary',
       },
     },
@@ -95,14 +96,14 @@ const Button: ComponentStyleConfig = {
       _hover: {
         filter: 'brightness(0.95)',
         bg: 'secondary',
-        background: hexToRgba('secondary', 0.1),
+        background: hexToRgba(colors.secondary, 0.1),
         color: 'secondary',
       },
 
       _active: {
         filter: 'brightness(0.95)',
         bg: 'secondary',
-        background: hexToRgba('secondary', 0.3),
+        background: hexToRgba(colors.secondary, 0.3),
         color: 'secondary',
       },
     },

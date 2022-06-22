@@ -1,3 +1,7 @@
+export const sidebarWidth = '238px';
+
+export const topBarHeight = '50px';
+
 const sizes = {
   max: 'max-content',
   min: 'min-content',
@@ -17,7 +21,15 @@ const sizes = {
   '7xl': '80rem',
   '8xl': '90rem',
   sidebar: {
-    width: 'calc(100% - 238px)',
+    width: sidebarWidth,
+  },
+  content: {
+    width: `calc(100% - ${sidebarWidth})`,
+    maxW: `calc(1440px - ${sidebarWidth} - 60px)`,
+    height: `calc(100vh - ${topBarHeight} - 30px)`,
+  },
+  topBar: {
+    height: topBarHeight,
   },
   container: {
     sm: '640px',
