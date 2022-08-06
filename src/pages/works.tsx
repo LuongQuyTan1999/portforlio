@@ -1,4 +1,4 @@
-import { HomePage } from '@/features';
+import { Works } from '@/features';
 
 export async function getStaticProps() {
   return {
@@ -6,4 +6,4 @@ export async function getStaticProps() {
   };
 }
 
-export default HomePage;
+export default Works;

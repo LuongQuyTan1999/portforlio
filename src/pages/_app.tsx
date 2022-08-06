@@ -1,29 +1,24 @@
-import { FC } from 'react';
+// @ts-nocheck
 import Head from 'next/head';
-import { AppProps } from 'next/app';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
 import { useState } from 'react';
-import { ChakraProvider } from '@chakra-ui/react';
-import type { NextComponentType } from 'next';
+import { ChakraProvider, localStorageManager } from '@chakra-ui/react';
 import { appWithTranslation } from 'next-i18next';
 
-import theme from '@/theme';
 import store from '@/store';
-import { Fonts } from '@/theme/components/fonts';
+import { AnimatePresence } from 'framer-motion';
+import { Navbar } from '@/layouts/components/Navbar';
+import theme from '@/lib/theme';
 
-export type NextPageWithLayout = NextComponentType & {
-  getLayout?: (page: React.ReactElement) => React.ReactNode;
-};
+if (typeof window !== 'undefined') {
+  window.history.scrollRestoration = 'manual';
+}
 
-type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout;
-};
-
-const MyApp: FC<AppPropsWithLayout> = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps, router }) => {
   const [queryClient] = useState(() => new QueryClient());
 
-  const getLayout = Component.getLayout || ((page: React.ReactNode) => page);
+  const colorModeManager = localStorageManager;
 
   return (
     <>
@@ -32,10 +27,24 @@ const MyApp: FC<AppPropsWithLayout> = ({ Component, pageProps }) => {
         <link rel="manifest" href="/manifest.json" />
       </Head>
       <Provider store={store}>
-        <ChakraProvider resetCSS theme={theme}>
-          <Fonts />
+        <ChakraProvider
+          resetCSS
+          theme={theme}
+          colorModeManager={colorModeManager}
+        >
           <QueryClientProvider client={queryClient}>
-            {getLayout(<Component {...pageProps} />)}
+            <Navbar path={router.asPath} />
+            <AnimatePresence
+              exitBeforeEnter
+              initial={true}
+              onExitComplete={() => {
+                if (typeof window !== 'undefined') {
+                  window.scrollTo({ top: 0 });
+                }
+              }}
+            >
+              <Component {...pageProps} key={router.route} />
+            </AnimatePresence>
           </QueryClientProvider>
         </ChakraProvider>
       </Provider>
